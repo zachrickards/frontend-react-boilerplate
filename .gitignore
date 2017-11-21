@@ -1,0 +1,21 @@
+# dependencies
+node_modules
+*.css*
+
+# testing
+coverage
+errorShots
+
+# production
+build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.vscode/
+.idea/
+
+npm-debug.log*

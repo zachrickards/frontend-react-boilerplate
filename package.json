@@ -1,0 +1,63 @@
+{
+  "name": "frontend-react-boilerplate",
+  "version": "1.0.0",
+  "description": "A boilerplate for a purely front-end react application",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build-css": "node-less-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
+    "watch-css": "npm run build-css && node-less-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
+    "start": "npm run build-css && webpack --env=prod --progress --colors",
+    "dev": "concurrently --kill-others \"npm run watch-css\" \"webpack-dev-server --env=dev --progress --colors\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:zachrickards/frontend-react-boilerplate.git"
+  },
+  "author": "Zachary Rickards ",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "react": "^16.1.1",
+    "react-bootstrap": "^0.31.5",
+    "react-dom": "^16.1.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-jest": "^21.2.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-assign": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.17",
+    "concurrently": "^3.5.1",
+    "css-loader": "^0.28.7",
+    "eslint": "^4.11.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-react": "^7.5.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.5",
+    "html-webpack-plugin": "^2.30.1",
+    "jest": "^21.2.1",
+    "node-less-chokidar": "^0.1.2",
+    "optimize-css-assets-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.19.0",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.js"
+    ],
+    "coverageDirectory": "coverage",
+    "resetMocks": true,
+    "resetModules": true,
+    "transformIgnorePatterns": [
+      "/node_modules/(?!lib/).*"
+    ]
+  }
+}
